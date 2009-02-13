@@ -28,10 +28,10 @@ class BookmarkabyTest < ActiveSupport::TestCase
     assert_match(/href.*img/, bkm)
   end
   
-  test "should display default image" do
+  test "should display default image in the images/bookmarkaby folder" do
     image = "digg.gif"
     bkm = @view.bookmarkaby { |b| b.bookmark :digg }
-    assert_match(/\/images\/#{image}/, bkm)
+    assert_match(/\/images\/bookmarkaby\/#{image}/, bkm)
   end
   
   test "should display image_prefix" do
@@ -77,3 +77,4 @@ class BookmarkabyTest < ActiveSupport::TestCase
   end
 
 end
+
